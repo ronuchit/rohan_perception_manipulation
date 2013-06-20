@@ -1,0 +1,27 @@
+<package>
+  <description brief="object_detection_manipulation">
+
+     object_detection_manipulation
+
+  </description>
+  <author>siddarth</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/object_detection_manipulation</url>
+  
+  <depend package="actionlib"/>
+  <depend package="object_manipulation_msgs"/>
+  <depend package="tabletop_object_detector"/>
+  <depend package="tabletop_collision_map_processing"/>
+  <depend package="rospy"/>
+  <depend package="roslib"/>
+  <depend package="visualization_msgs"/>
+  <depend package="pr2_control_utilities"/>
+  <depend package="arm_navigation_msgs"/>
+
+
+
+
+</package>
+
+

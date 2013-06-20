@@ -1,0 +1,11 @@
+<launch>
+    <node pkg="ar_kinect" type="ar_kinect" name="ar_kinect">
+        <param name="marker_pattern_list" value="/home/rohan/urap/ar_kinect/data/objects_kinect"/>
+        <param name="marker_data_directory" value="/home/rohan/urap/ccny_vision/ar_pose"/>
+        <param name="threshold" value="100"/>
+        <param name="publish_visual_markers" value="True"/>
+        <param name="publish_tf" value="True"/>
+    </node>
+
+    <node pkg="perception_manipulation" type="openrave_input.py" name="openrave_input"/>
+</launch>

@@ -1,0 +1,38 @@
+commit 50669709f7dcbf418caeaf4568eba5253f54e840
+Author: Piyush Khandelwal <piyushk@piyushk-laptop.(none)>
+Date:   Tue Oct 4 11:53:36 2011 -0500
+
+    ARToolKit Patch for Natty - changes linux/videodev.h to v4l1-videodev.h
+
+diff --git a/artoolkit/ARToolKit-Natty.tar.gz.md5sum b/artoolkit/ARToolKit-Natty.tar.gz.md5sum
+new file mode 100644
+index 0000000..3465ee7
+--- /dev/null
++++ b/artoolkit/ARToolKit-Natty.tar.gz.md5sum
+@@ -0,0 +1 @@
++1d14f642857078711ec8333dbd33d3df  ARToolKit-Natty.tar.gz
+diff --git a/artoolkit/ARToolKit-SVN-r311.tar.gz.md5sum b/artoolkit/ARToolKit-SVN-r311.tar.gz.md5sum
+deleted file mode 100644
+index a8d3e4c..0000000
+--- a/artoolkit/ARToolKit-SVN-r311.tar.gz.md5sum
++++ /dev/null
+@@ -1 +0,0 @@
+-2f3537f782b5506133bcc79f2daba3bb  ARToolKit-SVN-r311.tar.gz
+diff --git a/artoolkit/Makefile b/artoolkit/Makefile
+index 593fded..5d53faa 100755
+--- a/artoolkit/Makefile
++++ b/artoolkit/Makefile
+@@ -1,11 +1,11 @@
+ all: installed
+ 
+ TARBALL     = build/ARToolKit-SVN-r311.tar.gz
+-TARBALL_URL = https://code.ros.org/svn/release/download/thirdparty/ARToolKit-SVN-r311.tar.gz
++TARBALL_URL = https://www.cs.utexas.edu/~piyushk/ARToolKit-Natty.tar.gz
+ UNPACK_CMD  = tar zxf
+ SOURCE_DIR  = build/artoolkit
+ #TARBALL_PATCH = matrix.patch
+-MD5SUM_FILE = ARToolKit-SVN-r311.tar.gz.md5sum
++MD5SUM_FILE = ARToolKit-Natty.tar.gz.md5sum
+ 
+ include $(shell rospack find mk)/download_unpack_build.mk
+ 

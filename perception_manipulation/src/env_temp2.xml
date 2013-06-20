@@ -1,0 +1,12 @@
+<Environment>
+      <KinBody name="object0">
+        <Translation> 0.781161 -0.002925 0.622158 </Translation>
+        <RotationAxis>1 0 0 90</RotationAxis>        
+        <Body type="dynamic">
+          <Geom type="cylinder">
+            <radius> 0.047209 </radius>
+            <height> 0.089132 </height>
+          </Geom>
+        </Body>
+      </KinBody>
+    </Environment>

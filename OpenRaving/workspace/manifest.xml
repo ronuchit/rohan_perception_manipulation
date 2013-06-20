@@ -1,0 +1,32 @@
+<package>
+  <description brief="workspace">
+
+     workspace
+
+  </description>
+  <author>Rohan</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/workspace</url>
+  <depend package="std_msgs"/>
+  <depend package="rospy"/>
+  <depend package="roscpp"/>
+  <depend package="roslib"/>
+  <depend package="tabletop_actions"/>
+  <depend package="object_manipulation_msgs"/>
+  <depend package="openrave_bridge"/>
+  <depend package="tabletop_object_detector"/>
+  <depend package="tabletop_collision_map_processing"/>
+  <depend package="household_objects_database_msgs"/>
+  <depend package="sensor_msgs"/>
+  <depend package="visualization_msgs"/>
+  <depend package="pr2_control_utilities"/>
+  <depend package="arm_navigation_msgs"/>
+  <depend package="pr2_controllers_msgs"/>
+  <depend package="trajectory_msgs"/>  
+  <depend package="control_msgs"/>  
+  <depend package="OpenRaving"/>  
+
+</package>
+
+

@@ -1,0 +1,16 @@
+<package>
+  <description brief="openrave_bridge">
+
+     openrave_bridge
+
+  </description>
+  <author>Lorenzo Riano</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/openrave_bridge</url>
+  <depend package="pr2_control_utilities"/>
+  <depend package="tabletop_actions"/>
+
+</package>
+
+

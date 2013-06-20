@@ -1,0 +1,7 @@
+\subsubsection usage Usage
+\verbatim
+<node name="pr2_control_utilities" pkg="pr2_control_utilities" type="pr2_control_utilities">
+  <param name="planner_service_name" type="str" value="ompl_planning/plan_kinematic_path" />
+</node>
+\endverbatim
+
