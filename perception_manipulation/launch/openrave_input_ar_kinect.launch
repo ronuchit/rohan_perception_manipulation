@@ -1,5 +1,5 @@
 <launch>
-    <node pkg="ar_kinect" type="ar_kinect" name="ar_kinect">
+    <node pkg="ar_kinect" type="ar_kinect" name="ar_kinect" args="points:='/wide_stereo/points2'">
         <param name="marker_pattern_list" value="/home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/data/objects_kinect"/>
         <param name="marker_data_directory" value="/home/ronuchit/Downloads/patternMaker/examples/ARToolKit_Patterns"/>
         <param name="threshold" value="100"/>
