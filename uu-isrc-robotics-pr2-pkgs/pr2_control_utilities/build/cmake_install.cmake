@@ -1,4 +1,4 @@
-# Install script for directory: /home/rohan/urap/uu-isrc-robotics-pr2-pkgs/pr2_control_utilities
+# Install script for directory: /home/ronuchit/Documents/rohan_perception_manipulation/uu-isrc-robotics-pr2-pkgs/pr2_control_utilities
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/rohan/urap/uu-isrc-robotics-pr2-pkgs/pr2_control_utilities/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/ronuchit/Documents/rohan_perception_manipulation/uu-isrc-robotics-pr2-pkgs/pr2_control_utilities/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/rohan/urap/uu-isrc-robotics-pr2-pkgs/pr2_control_utilities/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/ronuchit/Documents/rohan_perception_manipulation/uu-isrc-robotics-pr2-pkgs/pr2_control_utilities/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

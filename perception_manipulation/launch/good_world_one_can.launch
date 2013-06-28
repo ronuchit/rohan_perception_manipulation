@@ -18,6 +18,7 @@
 
 
   <include file="$(find pr2_gazebo)/launch/pr2.launch"/>
+  <!-- <node name="tuck_arms" pkg="pr2_tuckarm" type="tuck_arms.py" args="-l t -r t"/> -->
 
   <!-- -J r_upper_arm_roll_joint -1.64 -J r_shoulder_pan_joint -2.135 -J r_shoulder_lift_joint -0.02 -J r_forearm_roll_joint -1.64 -J r_elbow_flex_joint -2.07 -J r_wrist_flex_joint -1.68 -J r_wrist_roll_joint 1.40 --> 
   <!--include file="$(find pr2_controller_configuration_gazebo)/pr2_default_controllers.launch" /-->
@@ -25,11 +26,15 @@
   <!-- spawn table and tabletop object-->
   <param name="table_description" 
    command="$(find xacro)/xacro.py '$(find manipulation_worlds)/urdf/table.urdf.xacro'" />
-  <node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -model table_1"
+  <node name="spawn_table" pkg="gazebo" type="spawn_model" args="-urdf -param table_description -x -0.5 -y 0 -z 0 -model table_1"
    respawn="false" output="screen" />
 
-  <node name="spawn_object1" pkg="gazebo" type="spawn_model" 
-   args="-gazebo -file /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/share/gazebo-1.0.2/models/coke_can.model -model can1 -wait 'table_1' -x 0.8 -y 0 -z 0.4" 
+  <node name="spawn_object1" pkg="gazebo" type="spawn_model"
+   args="-gazebo -file /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/share/gazebo-1.0.2/models/coke_can.model -model can1 -wait 'table_1' -x 0.2 -y 0 -z 0.4"
+   respawn="false" output="screen" />
+
+  <node name="spawn_object2" pkg="gazebo" type="spawn_model" 
+   args="-gazebo -file /opt/ros/fuerte/stacks/simulator_gazebo/gazebo/gazebo/share/gazebo-1.0.2/models/big_sheet.model -model sheet1 -wait 'can1' -x 0.2 -y 0 -z 0.8"
    respawn="false" output="screen" />
    
   <!-- parameters that give you reasonable physics as well as good speed -->

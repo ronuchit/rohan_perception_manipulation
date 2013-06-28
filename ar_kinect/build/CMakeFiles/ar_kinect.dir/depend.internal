@@ -4,21 +4,21 @@
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o
  ../include/ar_kinect/ar_kinect.h
  ../include/ar_kinect/object.h
- /home/rohan/urap/ar_kinect/src/ar_kinect.cpp
- /home/rohan/urap/ccny_vision/ar_pose/msg_gen/cpp/include/ar_pose/ARMarker.h
- /home/rohan/urap/ccny_vision/ar_pose/msg_gen/cpp/include/ar_pose/ARMarkers.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/ar.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/arMulti.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/config.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/param.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoGStreamer.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoLinux1394Cam.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoLinuxDV.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoLinuxV4L.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoMacOSX.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoSGI.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/sys/videoWin32DirectShow.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/video.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/ar_kinect.cpp
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/ar_pose/msg_gen/cpp/include/ar_pose/ARMarker.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/ar_pose/msg_gen/cpp/include/ar_pose/ARMarkers.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/ar.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/arMulti.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/config.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/param.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoGStreamer.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoLinux1394Cam.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoLinuxDV.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoLinuxV4L.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoMacOSX.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoSGI.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/sys/videoWin32DirectShow.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/video.h
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/flann/algorithms/all_indices.h
@@ -437,10 +437,10 @@ CMakeFiles/ar_kinect.dir/src/ar_kinect.o
  /usr/include/eigen3/Eigen/src/misc/Solve.h
 CMakeFiles/ar_kinect.dir/src/object.o
  ../include/ar_kinect/object.h
- /home/rohan/urap/ar_kinect/src/object.cpp
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/ar.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/config.h
- /home/rohan/urap/ccny_vision/artoolkit/include/AR/param.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/object.cpp
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/ar.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/config.h
+ /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/include/AR/param.h
  /opt/ros/fuerte/include/XmlRpcDecl.h
  /opt/ros/fuerte/include/XmlRpcValue.h
  /opt/ros/fuerte/include/ros/advertise_options.h

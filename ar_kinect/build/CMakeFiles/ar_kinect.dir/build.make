@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rohan/urap/ar_kinect
+CMAKE_SOURCE_DIR = /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rohan/urap/ar_kinect/build
+CMAKE_BINARY_DIR = /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/ar_kinect.dir/depend.make
@@ -52,7 +52,7 @@ CMakeFiles/ar_kinect.dir/src/ar_kinect.o: ../manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/visualization_msgs/manifest.xml
-CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /home/rohan/urap/ccny_vision/artoolkit/manifest.xml
+CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/roslang/manifest.xml
@@ -71,7 +71,7 @@ CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/ros/core/rosbuil
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/image_common/image_transport/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/vision_opencv/cv_bridge/manifest.xml
-CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /home/rohan/urap/ccny_vision/ar_pose/manifest.xml
+CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/ar_pose/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/share/rosbag/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
@@ -84,22 +84,22 @@ CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/common_rosdeps/
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/perception_pcl/pcl_ros/manifest.xml
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /home/rohan/urap/ccny_vision/ar_pose/msg_gen/generated
+CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/ar_pose/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rohan/urap/ar_kinect/build/CMakeFiles $(CMAKE_PROGRESS_1)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build/CMakeFiles $(CMAKE_PROGRESS_1)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ar_kinect.dir/src/ar_kinect.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ar_kinect.dir/src/ar_kinect.o -c /home/rohan/urap/ar_kinect/src/ar_kinect.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ar_kinect.dir/src/ar_kinect.o -c /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/ar_kinect.cpp
 
 CMakeFiles/ar_kinect.dir/src/ar_kinect.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ar_kinect.dir/src/ar_kinect.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/rohan/urap/ar_kinect/src/ar_kinect.cpp > CMakeFiles/ar_kinect.dir/src/ar_kinect.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/ar_kinect.cpp > CMakeFiles/ar_kinect.dir/src/ar_kinect.i
 
 CMakeFiles/ar_kinect.dir/src/ar_kinect.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ar_kinect.dir/src/ar_kinect.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/rohan/urap/ar_kinect/src/ar_kinect.cpp -o CMakeFiles/ar_kinect.dir/src/ar_kinect.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/ar_kinect.cpp -o CMakeFiles/ar_kinect.dir/src/ar_kinect.s
 
 CMakeFiles/ar_kinect.dir/src/ar_kinect.o.requires:
 .PHONY : CMakeFiles/ar_kinect.dir/src/ar_kinect.o.requires
@@ -116,7 +116,7 @@ CMakeFiles/ar_kinect.dir/src/object.o: ../manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/geometry_msgs/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/std_msgs/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/visualization_msgs/manifest.xml
-CMakeFiles/ar_kinect.dir/src/object.o: /home/rohan/urap/ccny_vision/artoolkit/manifest.xml
+CMakeFiles/ar_kinect.dir/src/object.o: /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/artoolkit/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/bullet/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/sensor_msgs/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/roslang/manifest.xml
@@ -135,7 +135,7 @@ CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/ros/core/rosbuild/m
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/pluginlib/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/image_common/image_transport/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/vision_opencv/cv_bridge/manifest.xml
-CMakeFiles/ar_kinect.dir/src/object.o: /home/rohan/urap/ccny_vision/ar_pose/manifest.xml
+CMakeFiles/ar_kinect.dir/src/object.o: /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/ar_pose/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/share/rosbag/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/bond_core/bond/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/bond_core/smclib/manifest.xml
@@ -148,22 +148,22 @@ CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/common_rosdeps/man
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/perception_pcl/pcl_ros/manifest.xml
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/geometry/tf/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/geometry/tf/srv_gen/generated
-CMakeFiles/ar_kinect.dir/src/object.o: /home/rohan/urap/ccny_vision/ar_pose/msg_gen/generated
+CMakeFiles/ar_kinect.dir/src/object.o: /home/ronuchit/Documents/rohan_perception_manipulation/ccny_vision/ar_pose/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/bond_core/bond/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/nodelet_core/nodelet/srv_gen/generated
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/msg_gen/generated
 CMakeFiles/ar_kinect.dir/src/object.o: /opt/ros/fuerte/stacks/dynamic_reconfigure/srv_gen/generated
-	$(CMAKE_COMMAND) -E cmake_progress_report /home/rohan/urap/ar_kinect/build/CMakeFiles $(CMAKE_PROGRESS_2)
+	$(CMAKE_COMMAND) -E cmake_progress_report /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build/CMakeFiles $(CMAKE_PROGRESS_2)
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Building CXX object CMakeFiles/ar_kinect.dir/src/object.o"
-	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ar_kinect.dir/src/object.o -c /home/rohan/urap/ar_kinect/src/object.cpp
+	/usr/bin/c++   $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -o CMakeFiles/ar_kinect.dir/src/object.o -c /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/object.cpp
 
 CMakeFiles/ar_kinect.dir/src/object.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/ar_kinect.dir/src/object.i"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/rohan/urap/ar_kinect/src/object.cpp > CMakeFiles/ar_kinect.dir/src/object.i
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -E /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/object.cpp > CMakeFiles/ar_kinect.dir/src/object.i
 
 CMakeFiles/ar_kinect.dir/src/object.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/ar_kinect.dir/src/object.s"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/rohan/urap/ar_kinect/src/object.cpp -o CMakeFiles/ar_kinect.dir/src/object.s
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_FLAGS) -DBT_USE_DOUBLE_PRECISION -DBT_EULER_DEFAULT_ZYX -W -Wall -Wno-unused-parameter -fno-strict-aliasing -pthread -S /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/src/object.cpp -o CMakeFiles/ar_kinect.dir/src/object.s
 
 CMakeFiles/ar_kinect.dir/src/object.o.requires:
 .PHONY : CMakeFiles/ar_kinect.dir/src/object.o.requires
@@ -202,6 +202,6 @@ CMakeFiles/ar_kinect.dir/clean:
 .PHONY : CMakeFiles/ar_kinect.dir/clean
 
 CMakeFiles/ar_kinect.dir/depend:
-	cd /home/rohan/urap/ar_kinect/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rohan/urap/ar_kinect /home/rohan/urap/ar_kinect /home/rohan/urap/ar_kinect/build /home/rohan/urap/ar_kinect/build /home/rohan/urap/ar_kinect/build/CMakeFiles/ar_kinect.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build/CMakeFiles/ar_kinect.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ar_kinect.dir/depend
 

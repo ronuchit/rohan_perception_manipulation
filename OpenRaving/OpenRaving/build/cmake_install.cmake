@@ -1,4 +1,4 @@
-# Install script for directory: /home/rohan/urap/OpenRaving/OpenRaving
+# Install script for directory: /home/ronuchit/Documents/rohan_perception_manipulation/OpenRaving/OpenRaving
 
 # Set the install prefix
 IF(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -38,7 +38,7 @@ ELSE(CMAKE_INSTALL_COMPONENT)
   SET(CMAKE_INSTALL_MANIFEST "install_manifest.txt")
 ENDIF(CMAKE_INSTALL_COMPONENT)
 
-FILE(WRITE "/home/rohan/urap/OpenRaving/OpenRaving/build/${CMAKE_INSTALL_MANIFEST}" "")
+FILE(WRITE "/home/ronuchit/Documents/rohan_perception_manipulation/OpenRaving/OpenRaving/build/${CMAKE_INSTALL_MANIFEST}" "")
 FOREACH(file ${CMAKE_INSTALL_MANIFEST_FILES})
-  FILE(APPEND "/home/rohan/urap/OpenRaving/OpenRaving/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
+  FILE(APPEND "/home/ronuchit/Documents/rohan_perception_manipulation/OpenRaving/OpenRaving/build/${CMAKE_INSTALL_MANIFEST}" "${file}\n")
 ENDFOREACH(file)

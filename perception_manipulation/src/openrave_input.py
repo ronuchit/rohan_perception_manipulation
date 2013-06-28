@@ -17,10 +17,22 @@ import random
 from sensor_msgs.msg import *
 from visualization_msgs.msg import Marker
 from ar_pose.msg import *
+from geometry_msgs.msg import *
 
 TABLE_TOP_PADDING = 0.06
 
 def add_openrave_bodies():
+  """
+  Detects objects and creates corresponding OpenRave bodies
+  in an environment.
+
+  Returns the environment env, and a tuple of (detector, cluster_map), where cluster_map is a dict of
+    key: OpenRave object name
+    value: cluster index
+  Also returns bbox_map, a dict of
+    key: OpenTave object name
+    value: corresponding bounding box
+  """
   fname1 = "env_temp1.dae"
   fname2 = "env_temp2.xml"
 
@@ -58,8 +70,9 @@ def add_openrave_bodies():
         return None
       
       rospy.loginfo("Bounding box detected for object " + repr(i))
+      detector.draw_bounding_box(i+10, box_msg)
 
-      body_name = "object" + repr(i)
+      body_name = "object" + repr(i) # if this is changed, also would need to change is_object function below
       cylinder_xml = generate_cylinder_xml(body_name, box_msg, padding=0.005)
       env_xml += cylinder_xml
 
@@ -74,7 +87,7 @@ def add_openrave_bodies():
   env.Load(fname1)
   env.Load(fname2)
 
-  return env, (detector, cluster_map), clusters
+  return env, (detector, cluster_map)
 """
 
 def create_openrave_bodies(env, viewer=True):
@@ -181,8 +194,8 @@ def add_body(env, body_name, box_msg, scale=1.0, padding=0):
     #     box_msg.box_dims.y,\
     #       box_msg.box_dims.z]
 
-    print values
-    print "box_msg: "+ repr(box_msg)
+    print(values)
+    print("box_msg: "+ repr(box_msg))
 
     body = openravepy.RaveCreateKinBody(env,'')
     body.SetName(body_name)
@@ -247,12 +260,12 @@ def add_detected_table(table, env):
     return body
 
 
-def convert_point_cloud_to_point_cloud2(pc):
-  """
+"""def convert_point_cloud_to_point_cloud2(pc):
+  ""
   Adopted from corresponding C++ function in sensor_msgs/point_cloud_conversion.h
   Converts PointCloud message pc to PointCloud2 message. Returns PointCloud2 message
   without modifying pc.
-  """
+  ""
   pc2 = PointCloud2()
   
   pc2.header = pc.header
@@ -287,75 +300,102 @@ def convert_point_cloud_to_point_cloud2(pc):
     pc2.data[i * pc2.point_step + pc2.fields[2].offset] = pc.points[i].z
     
     for j in range(len(pc.channels)):
-      if len(pc.channels[j].values) == len(pc.points):
+      if len(pc.channels[j].values) == len(pc.points):        
         pc2.data[i * pc2.point_step + pc2.fields[3 + j].offset] = pc.channels[j].values[i]
 
   return pc2
+"""
 
+class ARKinectMarkers(object):
+  def __init__(self):
+    self.pattern_poses = [] # i-th element is a tuple of (pattern_id, pattern_pose) for a marker in image
+    self.ar_done = False
 
-def set_and_draw_markers(clusters):
-  all_ar_markers = [] # i-th element is a list of AR markers corresponding to cluster i in clusters
-  all_vis_markers = [] # i-th element is an rviz visualization marker corresponding to cluster i in clusters
-  
-  # set ros publishers and subscribers
-  point_publisher = rospy.Publisher('points', PointCloud2)
-  rviz_marker_drawer = rospy.Publisher('visualization_marker', Marker)
-  rospy.Subscriber('ar_pose_markers', ARMarkers, _ar_callback)
-  rospy.Subscriber('visualization_marker', Marker, _vis_callback, rviz_marker_drawer)
+    rospy.Subscriber('ar_pose_markers', ARMarkers, self._ar_callback)
+    
+  def set_markers(self):
+    self.ar_done = False
+    while not self.ar_done:
+      rospy.loginfo("Waiting for ar_kinect publishings...")
+      rospy.sleep(0.1)
+    return self.pattern_poses
 
-  for point_cloud in clusters:
-    ar_done = False
-    vis_done = False
-    point_cloud2 = convert_point_cloud_to_point_cloud2(point_cloud)
-    point_publisher.publish(point_cloud2)
-    while not (ar_done and vis_done):
-      #rospy.loginfo("Waiting for ar_kinect publishes...")
-      continue
+  def _ar_callback(self, ar_markers):
+    if not self.ar_done: # redundancy needed because publishings happen too fast
+      for marker in ar_markers.markers:
+        self.pattern_poses.append((marker.id, marker.header.frame_id, marker.pose))
+    self.ar_done = True
 
-  return all_ar_markers, all_vis_markers
+def get_pattern_name(pattern_id):
+  """ Just the identity function for now. """
+  return pattern_id
 
+def is_object(body):
+  return body.GetName()[0:6] == "object"
 
-def _ar_callback(ar_markers):
-  rospy.loginfo("In AR callback")
-  global all_ar_markers, ar_done
-  all_ar_markers += ar_markers
-  ar_done = True
+def resolve_clusters(env, pattern_poses):
+  num_bodies = sum([1 for body in env.GetBodies() if is_object(body)])
+  if num_bodies < len(pattern_poses):
+    rospy.logwarn("Detected fewer objects than markers!")
+  if num_bodies > len(pattern_poses):
+    rospy.logwarn("Detected more objects than markers!")
+  listener = tf.TransformListener()
+  detection_results = []
 
-def _vis_callback(vis_marker, rviz_marker_drawer):
-  rospy.loginfo("In vis callback")
-  global all_vis_markers, vis_done
-  all_vis_markers += vis_marker  
-  rviz_marker_drawer.publish(vis_marker)
-  vis_done = True
+  for body in env.GetBodies():
+    if is_object(body):
+      """ REMOVED BECAUSE BBOXES ALREADY COMPUTED IN /BASE_LINK FRAME
+      bbox_centroid_in = PointStamped()
+      bbox_centroid_in.header.frame_id = '/head_mount_link'
+      bbox_centroid_in.point.x, bbox_centroid_in.point.y, bbox_centroid_in.point.z = openravepy.poseFromMatrix(body.GetTransform())[4:7]
+      bbox_centroid = PointStamped()
+      tf.TransformListener().transformPoint('/base_link', bbox_centroid_in, bbox_centroid)"""
+      bbox_centroid = openravepy.poseFromMatrix(body.GetTransform())[4:7]
+      min_dist, min_dist_id, min_dist_pose = -1, None, None
+
+      for (pattern_id, frame_id, pattern_pose) in pattern_poses:
+        pattern_pose_in = PoseStamped()
+        pattern_pose_in.header.frame_id = frame_id
+        pattern_pose_in.pose = pattern_pose.pose
+        listener.waitForTransform("/base_link", frame_id, rospy.Time(0), rospy.Duration(5.0))    
+        pattern_pose_out = listener.transformPose("/base_link", pattern_pose_in)
+
+        curr_dist = np.linalg.norm(np.array(bbox_centroid) - \
+                                     np.array((pattern_pose_out.pose.position.x, pattern_pose_out.pose.position.y, pattern_pose_out.pose.position.z)))
+        if min_dist == -1 or curr_dist < min_dist:
+          min_dist = curr_dist
+          min_dist_id = pattern_id
+          min_dist_pose = pattern_pose_out
+
+      detection_results.append((get_pattern_name(min_dist_id), min_dist_pose, body.GetName()))
+
+  return detection_results
 
 
 def add_openrave_bodies_and_ar_markers(viewer=True):
   """
   Top-level function. Detects objects and creates corresponding OpenRave
   bodies in an environment. Returns environment and corresponding
-  AR Markers, and draws rviz visualization markers.
+  AR Markers.
 
   env: the created environment
   cluster_map: dict of
     key: OpenRave object name
     value: cluster index
-  clusters: array of point cloud for each detected object
-  all_ar_markers: i-th element is a list of AR markers corresponding to cluster i in clusters
-  all_vis_markers: i-th element is an rviz visualization marker corresponding to cluster i in clusters
+  detection_results: # tuple of (closest pattern id, closest pattern pose (PoseStamped), openrave object name) for each object
+  
   """
 
-  env, (detector, cluster_map), clusters = add_openrave_bodies()
+  env, (detector, cluster_map) = add_openrave_bodies()
   if viewer:
     env.SetViewer('qtcoin')
 
-  if clusters == None or len(clusters) == 0:
-    rospy.logwarn("No clusters detected.")
-    all_ar_markers, all_vis_markers = None, None
-  else:
-    all_ar_markers, all_vis_markers = set_and_draw_markers(clusters)
-  rospy.loginfo("******AR Markers******\n" + repr(all_ar_markers))
+  pattern_poses = ARKinectMarkers().set_markers() # i-th element is a tuple of (pattern_id, pattern_pose) for a marker in image
 
-  return env, detector, cluster_map, clusters, all_ar_markers, all_vis_markers
+  detection_results = resolve_clusters(env, pattern_poses) # tuple of (closest pattern id, closest pattern pose (PoseStamped), openrave object name) for each object
+  print("***DETECTION RESULTS***\n" + repr(detection_results))
+
+  return env, (detector, cluster_map), detection_results
 
 if __name__ == "__main__":
     rospy.init_node("workspace", anonymous=True)
@@ -363,11 +403,10 @@ if __name__ == "__main__":
     #env = openravepy.Environment() # load new environment
     #env.Load("bare_bone.dae")
 
-    #create_openrave_bodies(env, viewer=False)
+    #env = add_openrave_bodies()[0]
     env = add_openrave_bodies_and_ar_markers(viewer=False)[0]
 
     # add custom table
     #add_block(env, 'Table6', 0, -1.5, 0.5, 0.5, 0.25, 0.005)
 
     env.Save("created_info.dae")
- 

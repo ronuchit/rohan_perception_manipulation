@@ -32,10 +32,10 @@ CMAKE_COMMAND = /usr/bin/cmake
 RM = /usr/bin/cmake -E remove -f
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/rohan/urap/ar_kinect
+CMAKE_SOURCE_DIR = /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/rohan/urap/ar_kinect/build
+CMAKE_BINARY_DIR = /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build
 
 # Utility rule file for rosbuild_precompile.
 
@@ -57,6 +57,6 @@ CMakeFiles/rosbuild_precompile.dir/clean:
 .PHONY : CMakeFiles/rosbuild_precompile.dir/clean
 
 CMakeFiles/rosbuild_precompile.dir/depend:
-	cd /home/rohan/urap/ar_kinect/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/rohan/urap/ar_kinect /home/rohan/urap/ar_kinect /home/rohan/urap/ar_kinect/build /home/rohan/urap/ar_kinect/build /home/rohan/urap/ar_kinect/build/CMakeFiles/rosbuild_precompile.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build /home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/build/CMakeFiles/rosbuild_precompile.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/rosbuild_precompile.dir/depend
 

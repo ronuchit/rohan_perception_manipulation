@@ -1,7 +1,7 @@
 <launch>
     <node pkg="ar_kinect" type="ar_kinect" name="ar_kinect">
-        <param name="marker_pattern_list" value="/home/rohan/urap/ar_kinect/data/objects_kinect"/>
-        <param name="marker_data_directory" value="/home/rohan/urap/ccny_vision/ar_pose"/>
+        <param name="marker_pattern_list" value="/home/ronuchit/Documents/rohan_perception_manipulation/ar_kinect/data/objects_kinect"/>
+        <param name="marker_data_directory" value="/home/ronuchit/Downloads/patternMaker/examples/ARToolKit_Patterns"/>
         <param name="threshold" value="100"/>
         <param name="publish_visual_markers" value="True"/>
         <param name="publish_tf" value="True"/>
